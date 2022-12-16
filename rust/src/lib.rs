@@ -1,5 +1,9 @@
-#[no_mangle]
-pub extern fn sum(num_1: i32, num_2: i32) -> i32 {
-    return num_1 + num_2;
-}
 
+#[no_mangle]
+pub extern fn fibonacci(x: i32) -> i32 {
+    if x <= 2 {
+      return 1;
+    } else {
+      return fibonacci(x - 1) + fibonacci(x - 2);
+    }
+  }

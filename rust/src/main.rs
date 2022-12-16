@@ -1,6 +1,6 @@
-use rust_node::sum;
+use rust_node::fibonacci;
 
 fn main() {
-    let sum = sum(2,3);
-    println!("Sum of {} and {} is {}", 2,3, sum);
+    let fib = fibonacci(20);
+    println!("Fibonacci: {}", fib);
 }
