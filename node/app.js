@@ -4,8 +4,6 @@ const lib = ffi.Library("../rust/target/release/librust_node",{
     "sum":['int',["int", "int"]]
 })
 
-
-
 const startTime = performance.now()
 const result = lib.sum(100, 50)
 const endTime = performance.now()
@@ -25,4 +23,3 @@ console.log('Result: ', result)
 
 console.log(`Call to node-sum took ${endTimeNode - startTimeNode} milliseconds`)
 console.log('Result: ', result_node)
-
