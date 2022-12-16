@@ -1,19 +1,23 @@
 const ffi = require("ffi-napi")
 
 const lib = ffi.Library("../rust/target/release/librust_node",{
-    "sum":['int',["int", "int"]]
+    "fibonacci":['int',["int"]]
 })
 
 const startTime = performance.now()
-const result = lib.sum(100, 50)
+const result = lib.fibonacci(20)
 const endTime = performance.now()
 
-function node_sum(num_1, num_2){
-    return num_1 + num_2;
+function fibonacci_node(x){
+    if (x <= 2) {
+        return 1;
+      } else {
+        return fibonacci_node(x - 1) + fibonacci_node(x - 2);
+      }
 }
 
 const startTimeNode = performance.now()
-const result_node = node_sum(100, 50)
+const result_node = fibonacci_node(20)
 const endTimeNode = performance.now()
 
 
